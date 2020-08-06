@@ -11,6 +11,7 @@
     <Cart
       v-else
       :cart="cart"
+      :total="totalProducts"
       @addToCart="addToCart"
       @removeFromCart="removeFromCart"
     />
@@ -31,6 +32,9 @@ export default {
     Products,
     Footer,
     Cart
+  },
+  mounted() {
+    console.log(this.totalProducts);
   },
   data() {
     return {
@@ -163,6 +167,16 @@ export default {
           });
         }
       }
+    }
+  },
+  computed: {
+    totalProducts() {
+      let total = 0;
+      this.cart.forEach(product => {
+        total += product.price;
+      });
+
+      return total;
     }
   }
 };

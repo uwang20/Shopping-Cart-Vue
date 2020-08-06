@@ -1,5 +1,8 @@
 <template>
   <div class="root-container">
+    <div class="total-wrapper">
+      <h2>Total: {{ `$ ${total.toFixed(2)}` }}</h2>
+    </div>
     <ul class="cart-products">
       <li v-for="product in cart" :key="product.id" class="cart-product">
         <div class="cart-image-wrapper">
@@ -34,6 +37,10 @@ export default {
     cart: {
       type: Array,
       required: true
+    },
+    total: {
+      type: Number,
+      required: true
     }
   },
   methods: {
@@ -60,10 +67,16 @@ export default {
   min-height: 100vh;
 }
 
+.total-wrapper {
+  width: 80%;
+  margin: auto;
+  padding: 50px 15px 0 15px;
+}
+
 .cart-products {
   width: 80%;
   margin: auto;
-  padding: 50px 15px 20px 15px;
+  padding: 15px 15px 20px 15px;
 
   display: grid;
   grid-template-columns: 1fr;

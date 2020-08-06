@@ -1,6 +1,6 @@
 <template>
   <div class="root-container">
-    THIS IS THE ROOT
+    FOOTER
   </div>
 </template>
 
