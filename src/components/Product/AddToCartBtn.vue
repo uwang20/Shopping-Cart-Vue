@@ -79,7 +79,13 @@ export default {
   cursor: pointer;
 }
 
+.add-to-cart-btn:hover {
+  filter: brightness(110%);
+}
+
+
 .justify-between {
   justify-content: space-between;
+  background-image: linear-gradient(to right, #65e21e, #adef87);
 }
 </style>
